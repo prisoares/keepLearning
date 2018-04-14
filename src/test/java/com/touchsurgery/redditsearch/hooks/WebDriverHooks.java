@@ -9,11 +9,17 @@ public class WebDriverHooks {
 
 	@Before
 	public void testSetUp() {
-		TestContext.getDriverInstance();
+		// TODO Verify a better way to setup the driver
+		TestContext.getDriver();
 	}
-	
+
 	@After
 	public void testShutDown() {
-		TestContext.getDriverInstance().manage().deleteAllCookies();
+		TestContext.getDriver().manage().deleteAllCookies();
+	}
+
+	@After("@web")
+	public static void testClassShutDown() {
+		TestContext.getDriver().close();
 	}
 }

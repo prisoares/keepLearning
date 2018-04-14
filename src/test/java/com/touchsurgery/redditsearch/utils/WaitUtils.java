@@ -8,8 +8,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtils {
 
+	private static final int TIMEOUT_SECONDS = 5;
+
 	public static void waitUntilRedditIsLoaded(final WebDriver driver, final By by) {
-		final WebDriverWait wait = new WebDriverWait(driver, 5);
+		final WebDriverWait wait = new WebDriverWait(driver, TIMEOUT_SECONDS);
 		try {
 			wait.until(ExpectedConditions.presenceOfElementLocated(by));
 		} catch (final TimeoutException e) {
