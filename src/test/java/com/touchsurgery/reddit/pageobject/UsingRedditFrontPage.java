@@ -1,12 +1,12 @@
-package com.touchsurgery.redditsearch.pageobject;
+package com.touchsurgery.reddit.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import com.touchsurgery.redditsearch.utils.PropertiesProvider;
-import com.touchsurgery.redditsearch.utils.TestContext;
-import com.touchsurgery.redditsearch.utils.WaitUtils;
+import com.touchsurgery.reddit.utils.PropertiesProvider;
+import com.touchsurgery.reddit.utils.TestContext;
+import com.touchsurgery.reddit.utils.WaitUtils;
 
 public class UsingRedditFrontPage {
 

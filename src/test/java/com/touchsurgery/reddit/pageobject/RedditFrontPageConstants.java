@@ -1,4 +1,4 @@
-package com.touchsurgery.redditsearch.pageobject;
+package com.touchsurgery.reddit.pageobject;
 
 public interface RedditFrontPageConstants {
 

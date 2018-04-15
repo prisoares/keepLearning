@@ -1,7 +1,7 @@
-package com.touchsurgery.redditsearch.stepdefs;
+package com.touchsurgery.reddit.stepdefs;
 
-import com.touchsurgery.redditsearch.pageobject.RedditFrontPage;
-import com.touchsurgery.redditsearch.pageobject.UsingRedditFrontPage;
+import com.touchsurgery.reddit.pageobject.RedditFrontPage;
+import com.touchsurgery.reddit.pageobject.UsingRedditFrontPage;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

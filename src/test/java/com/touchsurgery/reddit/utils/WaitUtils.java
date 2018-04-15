@@ -1,4 +1,4 @@
-package com.touchsurgery.redditsearch.utils;
+package com.touchsurgery.reddit.utils;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;

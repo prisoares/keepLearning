@@ -1,23 +1,23 @@
-package com.touchsurgery.redditsearch.pageobject;
+package com.touchsurgery.reddit.pageobject;
 
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.FIRST_SUBREDDITS_XPATH;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.FRAMEWORK_PROPERTIES;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.PASSWORD_FIELD_NAME;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SEARCH_SUBMIT_BUTTON_XPATH;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SEARCH_TEXTBOX_NAME;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SKIP_LOGIN_FOR_NOW_XPATH;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SUBMIT_LOGIN_BUTTON_XPATH;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.THE_MOST_UPVOTED_POST_XPATH;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.TOP_POSTS_TAB_XPATH;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.TS_PASSWORD;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.TS_USERNAME;
-import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.USERNAME_FIELD_NAME;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.FIRST_SUBREDDITS_XPATH;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.FRAMEWORK_PROPERTIES;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.PASSWORD_FIELD_NAME;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SEARCH_SUBMIT_BUTTON_XPATH;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SEARCH_TEXTBOX_NAME;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SKIP_LOGIN_FOR_NOW_XPATH;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SUBMIT_LOGIN_BUTTON_XPATH;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.THE_MOST_UPVOTED_POST_XPATH;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TOP_POSTS_TAB_XPATH;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TS_PASSWORD;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TS_USERNAME;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.USERNAME_FIELD_NAME;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-import com.touchsurgery.redditsearch.utils.PropertiesProvider;
+import com.touchsurgery.reddit.utils.PropertiesProvider;
 
 public class RedditFrontPage {
 

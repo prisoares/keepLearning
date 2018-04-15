@@ -1,4 +1,4 @@
-package com.touchsurgery.redditsearch.utils;
+package com.touchsurgery.reddit.utils;
 
 import java.io.IOException;
 import java.util.Properties;

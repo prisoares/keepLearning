@@ -1,4 +1,4 @@
-package com.touchsurgery.redditsearch;
+package com.touchsurgery.reddit;
 
 import org.junit.runner.RunWith;
 
