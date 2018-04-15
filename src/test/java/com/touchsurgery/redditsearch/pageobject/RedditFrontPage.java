@@ -1,18 +1,25 @@
 package com.touchsurgery.redditsearch.pageobject;
 
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.FIRST_SUBREDDITS_XPATH;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.FRAMEWORK_PROPERTIES;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.PASSWORD_FIELD_NAME;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SEARCH_SUBMIT_BUTTON_XPATH;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SEARCH_TEXTBOX_NAME;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SKIP_LOGIN_FOR_NOW_XPATH;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.SUBMIT_LOGIN_BUTTON_XPATH;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.THE_MOST_UPVOTED_POST_XPATH;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.TOP_POSTS_TAB_XPATH;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.TS_PASSWORD;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.TS_USERNAME;
+import static com.touchsurgery.redditsearch.pageobject.RedditFrontPageConstants.USERNAME_FIELD_NAME;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import com.touchsurgery.redditsearch.utils.PropertiesProvider;
+
 public class RedditFrontPage {
-
-  private static final String SEARCH_SUBMIT_BUTTON_XPATH = "//*[@id=\"search\"]/input[2]";
-
-  private static final String SEARCH_TEXTBOX_NAME = "q";
-
-  private static final String FIRST_SUBREDDITS_XPATH = "/html/body/div[6]/div[2]/div/div/div[1]/header/a";
-
-  private static final String SKIP_LOGIN_FOR_NOW_XPATH = "//*[@id=\"desktop-onboarding-sign-up-form\"]/p[2]/a[2]";
 
   @FindBy(how = How.XPATH, using = SKIP_LOGIN_FOR_NOW_XPATH)
   private WebElement skipLoginLink;
@@ -24,7 +31,24 @@ public class RedditFrontPage {
   private WebElement searchSubmitButton;
 
   @FindBy(how = How.XPATH, using = FIRST_SUBREDDITS_XPATH)
-  private WebElement firstSuredditRedult;
+  private WebElement firstSuredditResult;
+
+  @FindBy(how = How.XPATH, using = TOP_POSTS_TAB_XPATH)
+  private WebElement topPostsTab;
+
+  @FindBy(how = How.XPATH, using = THE_MOST_UPVOTED_POST_XPATH)
+  private WebElement mostUpvotedPost;
+
+  @FindBy(how = How.NAME, using = USERNAME_FIELD_NAME)
+  private WebElement usernameField;
+
+  @FindBy(how = How.NAME, using = PASSWORD_FIELD_NAME)
+  private WebElement passwordField;
+
+  @FindBy(how = How.XPATH, using = SUBMIT_LOGIN_BUTTON_XPATH)
+  private WebElement submitLoginButton;
+
+  private PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
 
   public void skipLoginOnTheHomepage() {
     skipLoginLink.click();
@@ -39,7 +63,27 @@ public class RedditFrontPage {
   }
 
   public void clickOnFirstSubredditResult() {
-    firstSuredditRedult.click();
+    firstSuredditResult.click();
+  }
+
+  public void clickOnTopPostTab() {
+    topPostsTab.click();
+  }
+
+  public void printTheTopPostTitle() {
+    System.out.println("\n\n\n"+ "The most voted post is: " + mostUpvotedPost.getText());
+  }
+
+  public void fillUsernameField() {
+    usernameField.sendKeys(frameworkPropertiesProvider.getProperty(TS_USERNAME));
+  }
+
+  public void fillPasswordField() {
+    passwordField.sendKeys(frameworkPropertiesProvider.getProperty(TS_PASSWORD));
+  }
+
+  public void clickSubmitLoginButton() {
+    submitLoginButton.click();
   }
 
 }

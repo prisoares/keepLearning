@@ -4,6 +4,7 @@ import com.touchsurgery.redditsearch.pageobject.RedditFrontPage;
 import com.touchsurgery.redditsearch.pageobject.UsingRedditFrontPage;
 
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class SearchStepDefs {
@@ -13,7 +14,6 @@ public class SearchStepDefs {
   @Given("I open the Reddit homepage")
   public void i_open_the_Reddit_homepage() {
     usingRedditSearchPage = new UsingRedditFrontPage().createRedditFrontPage();
-    // TODO Refresh + Reload
   }
 
   @Given("I skip to perform my login for now")
@@ -32,4 +32,21 @@ public class SearchStepDefs {
     usingRedditSearchPage.clickOnFirstSubredditResult();
   }
 
+  @When("I print out the top most post title")
+  public void i_print_out_the_top_most_post_title() throws Throwable {
+    usingRedditSearchPage.clickOnTopPostTab();
+    usingRedditSearchPage.printTheTopPostTitle();
+  }
+
+  @When("I perform my login")
+  public void i_perform_my_login() throws Throwable {
+    usingRedditSearchPage.fillUsernameField();
+    usingRedditSearchPage.fillPasswordField();
+    usingRedditSearchPage.clickSubmitLoginButton();
+  }
+
+  @Then("I downvote the second post if it is upvoted already, upvote otherwise")
+  public void i_downvote_the_second_post_if_it_is_upvoted_already_upvote_otherwise() throws Throwable {
+
+  }
 }

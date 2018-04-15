@@ -10,3 +10,6 @@ Feature: Find specific communities on Reddit.
     And I skip to perform my login for now
     When I search for a subreddit called "gaming"
     And I open the sub-reddit
+    And I print out the top most post title
+    And I perform my login
+    Then I downvote the second post if it is upvoted already, upvote otherwise

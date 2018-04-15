@@ -2,12 +2,11 @@ package com.touchsurgery.redditsearch.pageobject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import com.touchsurgery.redditsearch.utils.PropertiesProvider;
 import com.touchsurgery.redditsearch.utils.TestContext;
 import com.touchsurgery.redditsearch.utils.WaitUtils;
-
-import org.openqa.selenium.support.PageFactory;
 
 public class UsingRedditFrontPage {
 
@@ -21,10 +20,14 @@ public class UsingRedditFrontPage {
 
   public RedditFrontPage createRedditFrontPage() {
     WebDriver driver = TestContext.getDriver();
+    navigateToSite(driver);
+    return PageFactory.initElements(driver, RedditFrontPage.class);
+  }
+
+  private void navigateToSite(WebDriver driver) {
     PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
     driver.get(System.getProperty(SEARCH_HOST, frameworkPropertiesProvider.getProperty(PRODUCTION_URL)));
     WaitUtils.waitUntilRedditIsLoaded(driver, By.id(DIV_WELCOME_TO_REDDIT_ID));
-    return PageFactory.initElements(driver, RedditFrontPage.class);
   }
 
 }
