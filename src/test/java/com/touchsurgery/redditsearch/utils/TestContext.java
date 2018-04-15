@@ -5,13 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestContext {
 
-	private static WebDriver driver;
-	
-	public static WebDriver getDriver() {
-		if (driver == null) {
-			driver = new ChromeDriver();
-		}
-		return driver;
-	}
-	
+  private static WebDriver driver;
+
+  public static WebDriver getDriver() {
+    if (driver == null) {
+      driver = new ChromeDriver();
+    }
+    return driver;
+  }
+
 }

@@ -7,19 +7,19 @@ import cucumber.api.java.Before;
 
 public class WebDriverHooks {
 
-	@Before
-	public void testSetUp() {
-		// TODO Verify a better way to setup the driver
-		TestContext.getDriver();
-	}
+  @Before
+  public void testSetUp() {
+    // TODO Verify a better way to setup the driver
+    TestContext.getDriver();
+  }
 
-	@After
-	public void testShutDown() {
-		TestContext.getDriver().manage().deleteAllCookies();
-	}
+  @After
+  public void testShutDown() {
+    TestContext.getDriver().manage().deleteAllCookies();
+  }
 
-	@After("@web")
-	public static void testClassShutDown() {
-		TestContext.getDriver().close();
-	}
+  @After("@web")
+  public static void testClassShutDown() {
+    TestContext.getDriver().close();
+  }
 }
