@@ -27,7 +27,7 @@ public class UsingRedditFrontPage {
   private void navigateToSite(WebDriver driver) {
     PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
     driver.get(System.getProperty(SEARCH_HOST, frameworkPropertiesProvider.getProperty(PRODUCTION_URL)));
-    WaitUtils.waitUntilRedditIsLoaded(driver, By.id(DIV_WELCOME_TO_REDDIT_ID));
+    WaitUtils.waitUntilPresenceOfElementLocated(By.id(DIV_WELCOME_TO_REDDIT_ID));
   }
 
 }

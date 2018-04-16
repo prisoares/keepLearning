@@ -1,5 +1,7 @@
 package com.touchsurgery.reddit.stepdefs;
 
+import org.junit.Assert;
+
 import com.touchsurgery.reddit.pageobject.RedditFrontPage;
 import com.touchsurgery.reddit.pageobject.UsingRedditFrontPage;
 
@@ -47,6 +49,12 @@ public class RedditFrontPageStepDefs {
 
   @Then("I downvote the second post if it is upvoted already, upvote otherwise")
   public void i_downvote_the_second_post_if_it_is_upvoted_already_upvote_otherwise() throws Throwable {
-
+    if (usingRedditSearchPage.isSecondTopPostUpvoted()) {
+      usingRedditSearchPage.clickDownvoteSecondTopPost();
+      Assert.assertTrue(usingRedditSearchPage.isSecondTopPostDownvoted());
+      return;
+    }
+    usingRedditSearchPage.clickUpvoteSecondTopPost();
+    Assert.assertTrue(usingRedditSearchPage.isSecondTopPostUpvoted());
   }
 }

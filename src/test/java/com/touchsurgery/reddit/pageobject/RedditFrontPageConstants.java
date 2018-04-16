@@ -26,4 +26,16 @@ public interface RedditFrontPageConstants {
 
   String SUBMIT_LOGIN_BUTTON_XPATH = "//*[@id=\"login_login-main\"]/div[4]/button";
 
+  String DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[5]";
+
+  String UPVOTED_BUTTON_SECOND_TOP_POST_XPATH = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[1]";
+
+  String CSS_CLASS_ATTRIBUTRE = "class";
+
+  String DOWNVOTE_CSS_CLASS_NAME = "downmod";
+
+  String UPVOTE_CSS_CLASS_NAME = "upmod";
+  
+  String LOGOUT_LINK_XPATH = "//*[@id=\"header-bottom-right\"]/form/a";
+
 }
