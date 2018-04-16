@@ -11,6 +11,7 @@ This application simulates a person who wants to give his vote to the second Top
 It can Print the Most Upvoted Reddit Post about Gaming. This Application can also check if the user has already voted on the second post and choose another option that was not voted by him yet to vote on it.
 
 The tests were based on the following User Story:
+
    1. As an User I want to open the website `https://www.reddit.com/`
    
    2. Search for a subreddit called "`gaming`"
