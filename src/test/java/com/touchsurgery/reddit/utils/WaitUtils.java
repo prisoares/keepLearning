@@ -17,5 +17,4 @@ public class WaitUtils {
       // do nothing
     }
   }
-
 }

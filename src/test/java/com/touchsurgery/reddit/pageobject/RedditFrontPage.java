@@ -13,8 +13,6 @@ import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SKIP_L
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SUBMIT_LOGIN_BUTTON_XPATH;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.THE_MOST_UPVOTED_POST_XPATH;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TOP_POSTS_TAB_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TS_PASSWORD;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TS_USERNAME;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.UPVOTED_BUTTON_SECOND_TOP_POST_XPATH;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.UPVOTE_CSS_CLASS_NAME;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.USERNAME_FIELD_NAME;
@@ -63,6 +61,10 @@ public class RedditFrontPage {
   private WebElement downvotedButtonSecondTopPost;
 
   private PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
+
+  private String TS_USERNAME = "username.touchsurgery";
+
+  private String TS_PASSWORD = "password.touchsurgery";
 
   public void skipLoginOnTheHomepage() {
     skipLoginLink.click();
@@ -119,5 +121,4 @@ public class RedditFrontPage {
     WaitUtils.waitUntilPresenceOfElementLocated(By.xpath(LOGOUT_LINK_XPATH));
     return downvotedButtonSecondTopPost.getAttribute(CSS_CLASS_ATTRIBUTRE).contains(DOWNVOTE_CSS_CLASS_NAME);
   }
-
 }

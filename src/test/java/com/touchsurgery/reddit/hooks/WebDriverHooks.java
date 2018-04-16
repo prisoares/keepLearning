@@ -9,7 +9,6 @@ public class WebDriverHooks {
 
   @Before
   public void testSetUp() {
-    // TODO Verify a better way to setup the driver
     TestContext.getDriver();
   }
 

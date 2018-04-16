@@ -2,10 +2,6 @@ package com.touchsurgery.reddit.pageobject;
 
 public interface RedditFrontPageConstants {
 
-  String TS_USERNAME = "username.touchsurgery";
-
-  String TS_PASSWORD = "password.touchsurgery";
-
   String FRAMEWORK_PROPERTIES = "framework.properties";
 
   String SKIP_LOGIN_FOR_NOW_XPATH = "//*[@id=\"desktop-onboarding-sign-up-form\"]/p[2]/a[2]";

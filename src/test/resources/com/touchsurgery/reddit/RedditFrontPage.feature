@@ -1,4 +1,4 @@
-Feature: Find specific communities on Reddit.
+Feature: Find specific communities on Reddit
   
   As an user of reddit	
   I want to be able to search for gaming subreddits	

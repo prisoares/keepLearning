@@ -8,7 +8,7 @@ import com.touchsurgery.reddit.utils.PropertiesProvider;
 import com.touchsurgery.reddit.utils.TestContext;
 import com.touchsurgery.reddit.utils.WaitUtils;
 
-public class UsingRedditFrontPage {
+public class RedditFrontPageFactory {
 
   private static final String FRAMEWORK_PROPERTIES = "framework.properties";
 
@@ -29,5 +29,4 @@ public class UsingRedditFrontPage {
     driver.get(System.getProperty(SEARCH_HOST, frameworkPropertiesProvider.getProperty(PRODUCTION_URL)));
     WaitUtils.waitUntilPresenceOfElementLocated(By.id(DIV_WELCOME_TO_REDDIT_ID));
   }
-
 }

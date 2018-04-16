@@ -3,7 +3,7 @@ package com.touchsurgery.reddit.stepdefs;
 import org.junit.Assert;
 
 import com.touchsurgery.reddit.pageobject.RedditFrontPage;
-import com.touchsurgery.reddit.pageobject.UsingRedditFrontPage;
+import com.touchsurgery.reddit.pageobject.RedditFrontPageFactory;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,7 +15,7 @@ public class RedditFrontPageStepDefs {
 
   @Given("I open the Reddit homepage")
   public void i_open_the_Reddit_homepage() {
-    usingRedditSearchPage = new UsingRedditFrontPage().createRedditFrontPage();
+    usingRedditSearchPage = new RedditFrontPageFactory().createRedditFrontPage();
   }
 
   @Given("I skip to perform my login for now")
@@ -55,6 +55,6 @@ public class RedditFrontPageStepDefs {
       return;
     }
     usingRedditSearchPage.clickUpvoteSecondTopPost();
-    Assert.assertTrue(usingRedditSearchPage.isSecondTopPostUpvoted());
+    Assert.assertTrue("The second top post is upvoded when it shouldn't.", usingRedditSearchPage.isSecondTopPostUpvoted());
   }
 }
