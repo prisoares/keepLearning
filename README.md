@@ -12,11 +12,17 @@ It can Print the Most Upvoted Reddit Post about Gaming. This Application can als
 
 The tests were based on the following User Story:
    1. As an User I want to open the website `https://www.reddit.com/`
+   
    2. Search for a subreddit called "`gaming`"
+   
    3. Open the sub-reddit
+   
    4. Print out the top most post's title
+   
    5. Perform a login
+   
    6. Downvote the second post if it's upvoted already, upvote otherwise.	
+   
 
 ## Running the Tests
 You need to have maven installed in your system.
