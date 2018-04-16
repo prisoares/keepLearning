@@ -31,7 +31,8 @@ public interface RedditFrontPageConstants {
   String DOWNVOTE_CSS_CLASS_NAME = "downmod";
 
   String UPVOTE_CSS_CLASS_NAME = "upmod";
-  
+
   String LOGOUT_LINK_XPATH = "//*[@id=\"header-bottom-right\"]/form/a";
 
+  String DIV_WELCOME_TO_REDDIT_ID = "desktop-onboarding-browse";
 }

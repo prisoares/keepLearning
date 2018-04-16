@@ -1,7 +1,10 @@
 package com.touchsurgery.reddit.utils;
 
+import java.util.Optional;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -9,12 +12,12 @@ public class WaitUtils {
 
   private static final int TIMEOUT_SECONDS = 5;
 
-  public static void waitUntilPresenceOfElementLocated(final By by) {
+  public static Optional<WebElement> waitUntilPresenceOfElementLocated(final By by) {
     final WebDriverWait wait = new WebDriverWait(TestContext.getDriver(), TIMEOUT_SECONDS);
     try {
-      wait.until(ExpectedConditions.presenceOfElementLocated(by));
+      return Optional.of(wait.until(ExpectedConditions.presenceOfElementLocated(by)));
     } catch (final TimeoutException e) {
-      // do nothing
+      return Optional.empty();
     }
   }
 }

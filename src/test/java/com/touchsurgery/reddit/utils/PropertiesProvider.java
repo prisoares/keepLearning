@@ -1,6 +1,7 @@
 package com.touchsurgery.reddit.utils;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class PropertiesProvider {
@@ -9,8 +10,8 @@ public class PropertiesProvider {
 
   public PropertiesProvider(String properties_name) {
     this.properties = new Properties();
-    try {
-      this.properties.load(PropertiesProvider.class.getClassLoader().getResourceAsStream(properties_name));
+    try (InputStream inStream = PropertiesProvider.class.getClassLoader().getResourceAsStream(properties_name)) {
+      this.properties.load(inStream);
     } catch (IOException e) {
       e.printStackTrace();
     }

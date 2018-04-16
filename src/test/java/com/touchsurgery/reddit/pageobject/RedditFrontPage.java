@@ -1,10 +1,10 @@
 package com.touchsurgery.reddit.pageobject;
 
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.CSS_CLASS_ATTRIBUTRE;
+import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.DIV_WELCOME_TO_REDDIT_ID;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.DOWNVOTE_CSS_CLASS_NAME;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.FIRST_SUBREDDITS_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.FRAMEWORK_PROPERTIES;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.LOGOUT_LINK_XPATH;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.PASSWORD_FIELD_NAME;
 import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SEARCH_SUBMIT_BUTTON_XPATH;
@@ -21,8 +21,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 import com.touchsurgery.reddit.utils.PropertiesProvider;
+import com.touchsurgery.reddit.utils.TestContext;
 import com.touchsurgery.reddit.utils.WaitUtils;
 
 public class RedditFrontPage {
@@ -65,6 +67,23 @@ public class RedditFrontPage {
   private String TS_USERNAME = "username.touchsurgery";
 
   private String TS_PASSWORD = "password.touchsurgery";
+
+  private static final String FRAMEWORK_PROPERTIES = "framework.properties";
+
+  private static final String SEARCH_HOST = "search.host";
+
+  private static final String PRODUCTION_URL = "production.url";
+
+  public RedditFrontPage() {
+    navigateToSite();
+    PageFactory.initElements(TestContext.getDriver(), this);
+  }
+
+  private void navigateToSite() {
+    PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
+    TestContext.getDriver().get(System.getProperty(SEARCH_HOST, frameworkPropertiesProvider.getProperty(PRODUCTION_URL)));
+    WaitUtils.waitUntilPresenceOfElementLocated(By.id(DIV_WELCOME_TO_REDDIT_ID));
+  }
 
   public void skipLoginOnTheHomepage() {
     skipLoginLink.click();
