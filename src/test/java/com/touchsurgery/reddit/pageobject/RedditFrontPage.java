@@ -1,22 +1,5 @@
 package com.touchsurgery.reddit.pageobject;
 
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.CSS_CLASS_ATTRIBUTRE;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.DIV_WELCOME_TO_REDDIT_ID;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.DOWNVOTE_CSS_CLASS_NAME;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.FIRST_SUBREDDITS_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.LOGOUT_LINK_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.PASSWORD_FIELD_NAME;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SEARCH_SUBMIT_BUTTON_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SEARCH_TEXTBOX_NAME;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SKIP_LOGIN_FOR_NOW_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.SUBMIT_LOGIN_BUTTON_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.THE_MOST_UPVOTED_POST_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.TOP_POSTS_TAB_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.UPVOTED_BUTTON_SECOND_TOP_POST_XPATH;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.UPVOTE_CSS_CLASS_NAME;
-import static com.touchsurgery.reddit.pageobject.RedditFrontPageConstants.USERNAME_FIELD_NAME;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,6 +11,49 @@ import com.touchsurgery.reddit.utils.TestContext;
 import com.touchsurgery.reddit.utils.WaitUtils;
 
 public class RedditFrontPage {
+  private PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
+
+  private static final String SEARCH_HOST = "search.host";
+
+  private static final String PRODUCTION_URL = "production.url";
+
+  private static final String TS_USERNAME = "username.touchsurgery";
+
+  private static final String TS_PASSWORD = "password.touchsurgery";
+
+  private static final String FRAMEWORK_PROPERTIES = "framework.properties";
+
+  private static final String SKIP_LOGIN_FOR_NOW_XPATH = "//*[@id=\"desktop-onboarding-sign-up-form\"]/p[2]/a[2]";
+
+  private static final String SEARCH_TEXTBOX_NAME = "q";
+
+  private static final String SEARCH_SUBMIT_BUTTON_XPATH = "//*[@id=\"search\"]/input[2]";
+
+  private static final String FIRST_SUBREDDITS_XPATH = "/html/body/div[6]/div[2]/div/div/div[1]/header/a";
+
+  private static final String TOP_POSTS_TAB_XPATH = "//*[@id=\"header-bottom-left\"]/ul/li[5]/a";
+
+  private static final String THE_MOST_UPVOTED_POST_XPATH = "//*[@id=\"siteTable\"]/div[1]/div[2]/div[1]/p[1]/a";
+
+  private static final String USERNAME_FIELD_NAME = "user";
+
+  private static final String PASSWORD_FIELD_NAME = "passwd";
+
+  private static final String SUBMIT_LOGIN_BUTTON_XPATH = "//*[@id=\"login_login-main\"]/div[4]/button";
+
+  private static final String DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[5]";
+
+  private static final String UPVOTED_BUTTON_SECOND_TOP_POST_XPATH = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[1]";
+
+  private static final String CSS_CLASS_ATTRIBUTRE = "class";
+
+  private static final String DOWNVOTE_CSS_CLASS_NAME = "downmod";
+
+  private static final String UPVOTE_CSS_CLASS_NAME = "upmod";
+
+  private static final String LOGOUT_LINK_XPATH = "//*[@id=\"header-bottom-right\"]/form/a";
+
+  private static final String DIV_WELCOME_TO_REDDIT_ID = "desktop-onboarding-browse";
 
   @FindBy(how = How.XPATH, using = SKIP_LOGIN_FOR_NOW_XPATH)
   private WebElement skipLoginLink;
@@ -61,18 +87,6 @@ public class RedditFrontPage {
 
   @FindBy(how = How.XPATH, using = DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH)
   private WebElement downvotedButtonSecondTopPost;
-
-  private PropertiesProvider frameworkPropertiesProvider = new PropertiesProvider(FRAMEWORK_PROPERTIES);
-
-  private String TS_USERNAME = "username.touchsurgery";
-
-  private String TS_PASSWORD = "password.touchsurgery";
-
-  private static final String FRAMEWORK_PROPERTIES = "framework.properties";
-
-  private static final String SEARCH_HOST = "search.host";
-
-  private static final String PRODUCTION_URL = "production.url";
 
   public RedditFrontPage() {
     navigateToSite();
