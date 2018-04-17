@@ -23,28 +23,6 @@ public class RedditFrontPage {
 
   private static final String FRAMEWORK_PROPERTIES = "framework.properties";
 
-  private static final String SKIP_LOGIN_FOR_NOW_XPATH = "//*[@id=\"desktop-onboarding-sign-up-form\"]/p[2]/a[2]";
-
-  private static final String SEARCH_TEXTBOX_NAME = "q";
-
-  private static final String SEARCH_SUBMIT_BUTTON_XPATH = "//*[@id=\"search\"]/input[2]";
-
-  private static final String FIRST_SUBREDDITS_XPATH = "/html/body/div[6]/div[2]/div/div/div[1]/header/a";
-
-  private static final String TOP_POSTS_TAB_XPATH = "//*[@id=\"header-bottom-left\"]/ul/li[5]/a";
-
-  private static final String THE_MOST_UPVOTED_POST_XPATH = "//*[@id=\"siteTable\"]/div[1]/div[2]/div[1]/p[1]/a";
-
-  private static final String USERNAME_FIELD_NAME = "user";
-
-  private static final String PASSWORD_FIELD_NAME = "passwd";
-
-  private static final String SUBMIT_LOGIN_BUTTON_XPATH = "//*[@id=\"login_login-main\"]/div[4]/button";
-
-  private static final String DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[5]";
-
-  private static final String UPVOTED_BUTTON_SECOND_TOP_POST_XPATH = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[1]";
-
   private static final String CSS_CLASS_ATTRIBUTRE = "class";
 
   private static final String DOWNVOTE_CSS_CLASS_NAME = "downmod";
@@ -55,37 +33,37 @@ public class RedditFrontPage {
 
   private static final String DIV_WELCOME_TO_REDDIT_ID = "desktop-onboarding-browse";
 
-  @FindBy(how = How.XPATH, using = SKIP_LOGIN_FOR_NOW_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"desktop-onboarding-sign-up-form\"]/p[2]/a[2]")
   private WebElement skipLoginLink;
 
-  @FindBy(how = How.NAME, using = SEARCH_TEXTBOX_NAME)
+  @FindBy(how = How.NAME, using = "q")
   private WebElement searchTextBox;
 
-  @FindBy(how = How.XPATH, using = SEARCH_SUBMIT_BUTTON_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"search\"]/input[2]")
   private WebElement searchSubmitButton;
 
-  @FindBy(how = How.XPATH, using = FIRST_SUBREDDITS_XPATH)
+  @FindBy(how = How.XPATH, using = "/html/body/div[6]/div[2]/div/div/div[1]/header/a")
   private WebElement firstSuredditResult;
 
-  @FindBy(how = How.XPATH, using = TOP_POSTS_TAB_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"header-bottom-left\"]/ul/li[5]/a")
   private WebElement topPostsTab;
 
-  @FindBy(how = How.XPATH, using = THE_MOST_UPVOTED_POST_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"siteTable\"]/div[1]/div[2]/div[1]/p[1]/a")
   private WebElement mostUpvotedPost;
 
-  @FindBy(how = How.NAME, using = USERNAME_FIELD_NAME)
+  @FindBy(how = How.NAME, using = "user")
   private WebElement usernameField;
 
-  @FindBy(how = How.NAME, using = PASSWORD_FIELD_NAME)
+  @FindBy(how = How.NAME, using = "passwd")
   private WebElement passwordField;
 
-  @FindBy(how = How.XPATH, using = SUBMIT_LOGIN_BUTTON_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"login_login-main\"]/div[4]/button")
   private WebElement submitLoginButton;
 
-  @FindBy(how = How.XPATH, using = UPVOTED_BUTTON_SECOND_TOP_POST_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[1]")
   private WebElement upvotedButtonSecondTopPost;
 
-  @FindBy(how = How.XPATH, using = DOWNVOTED_BUTTON_SECOND_TOP_POST_XPATH)
+  @FindBy(how = How.XPATH, using = "//*[@id=\"siteTable\"]/div[3]/div[1]/div[5]")
   private WebElement downvotedButtonSecondTopPost;
 
   public RedditFrontPage() {
