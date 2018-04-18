@@ -5,7 +5,7 @@ This project is for the purpose of recruitment of a QA person.
 ## Project Description
 It is a simple test project, which has actually 1 test scenario implemented.
 
-It runs only using Chrome browser, because it is based on this study https://en.wikipedia.org/wiki/Usage_share_of_web_browsers, ~ 80% of the people use Chrome, so I decided, just for this assignment, to use ChromeDriver only. It can be improved in the next versions to run in other browsers. 
+It runs only using Chrome browser, based on this study https://en.wikipedia.org/wiki/Usage_share_of_web_browsers, ~ 80% of the people use Chrome, so I decided, just for this assignment, to use ChromeDriver only. It can be improved in the next versions to run in other browsers. 
 
 This application simulates a person who wants to give his vote to the second Top Reddit Post about Gaming. 
 It can Print the Most Upvoted Reddit Post about Gaming. This Application can also check if the user has already voted on the second post and choose another option that was not voted by him yet to vote on it.
@@ -26,6 +26,7 @@ The tests were based on the following User Story:
    
 
 ## Running the Tests
+You need to have at least Java 8 installed in your system.
 You need to have maven installed in your system.
 To run all the tests you need to run the following command in your terminal `mvn test`. (This command will run all the tests scenarios already implemented, you only need to access the folder you have downloaded the project and run the maven command.). 
 
